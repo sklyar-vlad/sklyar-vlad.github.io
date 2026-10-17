@@ -69,7 +69,7 @@ components:
 
 A large centered console presents a fish-style portfolio on a navy canvas. Ice text, amber commands and a cyan path distinguish reading content from shell controls. The titlebar anchors the window; its body scrolls independently. Only the welcome response appears at startup.
 
-The welcome pairs an ASCII name with a detailed generated pixel image at `assets/avatar-portrait-v3.png`. The image opens at full size and replaces the former ASCII hood portrait. Fish behavior is emulated in browser JavaScript for static GitHub Pages hosting; it is not a server shell. No framework or workflow preference is inferred.
+The welcome pairs an ASCII name with a detailed generated pixel image at `assets/avatar-pixel-restored.png`. The image opens at full size and replaces the former ASCII hood portrait. Fish behavior is emulated in browser JavaScript for static GitHub Pages hosting; it is not a server shell. No framework or workflow preference is inferred.
 
 **Key Characteristics:**
 - Centered console with titlebar and internally scrolling output.
@@ -105,7 +105,7 @@ The console has rounded desktop/mobile corners from the frontmatter and clips it
 ## Components
 
 - **Titlebar:** dots, `fish — ~/portfolio` identity and right-aligned owner; owner hides on mobile.
-- **Welcome image:** `assets/avatar-portrait-v3.png` linked to its full-size asset in a new tab, with descriptive alt text. It isolates the author in a dark jacket with a crossbody bag on a transparent background, with no other people or scenery.
+- **Welcome image:** `assets/avatar-pixel-restored.png` linked to its full-size asset in a new tab, with descriptive alt text. It isolates the author in the blue hoodie on a transparent background, with no other people or scenery.
 - **Prompt editor:** `visitor@sklyarvlad ~/portfolio>` with an amber caret. Recognized input turns valid green; unknown input turns error red. No ghost suggestions, acceptance bindings, completion menus or instructional hints. Tab/Ctrl+I silently completes a unique match; arrows navigate history. Names are case-sensitive; words support quotes, escapes and comments. Unknown commands use `fish: Unknown command: name`.
 - **Command actions and links:** zero-padding amber command buttons underline on hover; cyan dashed links turn amber on hover. The mobile submit target is at least 28 × 32px.
 - **Output:** polite live log capped at 50 entries. Only `welcome` runs at boot; `help` is available only when explicitly invoked. History lasts for the page visit; theme selection persists locally. No-JavaScript portfolio text remains available.
@@ -119,8 +119,7 @@ The console has rounded desktop/mobile corners from the frontmatter and clips it
 - Don’t apply ASCII name leading to reading text.
 - Don’t describe the emulated shell as executing arbitrary server commands.
 
-## Avatar fidelity and immediate output
-`assets/avatar-portrait-v3.png` is a fresh extraction from the original user photograph, not from earlier stylized generations. Only the author in a dark jacket with a crossbody bag remains, with alpha transparency. The browser draws the loaded image at 224 logical pixels wide on canvas, with CSS pixelated scaling; the image remains a fallback when canvas is unavailable. No reveal or entrance animation. Cached images draw synchronously; first load uses the preloaded image. The linked full-resolution asset is the unpixelated cutout.
+## Current portrait and hollow wordmark
+User requested rollback to the earlier, more visibly pixelated blue-hoodie portrait. Restored the existing generated cutout as `assets/avatar-pixel-restored.png` (1197×1314 RGBA). The source file is displayed directly, with CSS pixelated scaling and no canvas processing or reveal animation. Other UI and command changes remain intact.
 
-## Current wordmark and portrait source
-The user requested `sklyarvlad` rather than `Sklyar`, with solid lettering. The seven-row wordmark uses filled block glyphs, accessible label sklyarvlad, responsive font sizes and no outline strokes. On-screen host and titlebar owner also read sklyarvlad; actual GitHub URLs retain sklyar-vlad. The current cutout is based on IMG_20240908_103314_763.jpg (front-facing dark-jacket portrait), 1024×1536 PNG with alpha; browser pixelation and immediate command output remain unchanged.
+The nickname remains `sklyarvlad`, with airy hollow ASCII lettering from figlet's slant font rather than solid block glyphs. The accessible label and prompt retain sklyarvlad; GitHub URLs retain the actual sklyar-vlad username.

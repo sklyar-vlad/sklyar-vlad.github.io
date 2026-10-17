@@ -57,23 +57,6 @@
     return p;
   }
   function trimOutput() { while (output.children.length > 50) output.firstElementChild.remove(); }
-  function pixelateAvatar(entry) {
-    entry.querySelectorAll('.pixel-avatar img').forEach(image => {
-      function draw() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 224;
-        canvas.height = Math.round(canvas.width * image.naturalHeight / image.naturalWidth);
-        const context = canvas.getContext('2d');
-        if (!context) return;
-        context.drawImage(image, 0, 0, canvas.width, canvas.height);
-        canvas.setAttribute('role', 'img');
-        canvas.setAttribute('aria-label', image.alt);
-        image.replaceWith(canvas);
-      }
-      if (image.complete && image.naturalWidth) draw();
-      else image.addEventListener('load', draw, { once: true });
-    });
-  }
   function updateInput() {
     const token = input.value.trim().split(/\s+/)[0];
     input.dataset.valid = token ? String([...commands, ...Object.keys(aliases), 'theme'].includes(token)) : '';
@@ -132,7 +115,6 @@
     else if (Object.hasOwn(render, command)) response.append(render[command]());
     else response.append(node('p', `fish: Unknown command: ${token}`, 'error'));
     entry.append(response); output.append(entry);
-    pixelateAvatar(entry);
     // Bound the DOM while preserving full keyboard history for this visit.
     trimOutput();
     if (!boot) requestAnimationFrame(() => { terminalBody.scrollTop = terminalBody.scrollHeight; });

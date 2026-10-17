@@ -33,3 +33,6 @@ User requested UNIX-style command syntax and errors, case sensitivity and no uns
 
 ## Current portrait and name
 User supplied /home/sklyarvlad/Documents/vlad/IMG_20240908_103314_763.jpg as the new portrait source, replacing the blue-hoodie photograph. Preserve the front-facing likeness and use transparent cutout with deterministic browser pixelation. Display nickname sklyarvlad as solid block lettering rather than the former outline-style Sklyar wordmark. GitHub URLs retain the actual sklyar-vlad username.
+
+## Latest rollback request
+Restore the earlier strongly pixelated blue-hoodie portrait, keep nickname sklyarvlad but use hollow lettering instead of filled blocks. Preserve centered fish console, palette, no-hints policy and UNIX-style command behavior. Current portrait supersedes the later front-facing photograph.
