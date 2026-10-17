@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#141715">
+  <meta name="description" content="Владислав Скляренко — backend-разработчик. Python, Go, API и инфраструктура. Интерактивное портфолио в терминале.">
+  <title>Владислав Скляренко · terminal portfolio</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./profile.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="workspace">
+    <header class="masthead">
+      <a class="wordmark" href="./" aria-label="Портфолио — начало"><span class="accent">~/</span>portfolio<span class="muted">.sh</span></a>
+      <a class="github-link" href="https://github.com/sklyar-vlad" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="terminal" data-ui aria-label="Интерактивное портфолио">
+      <div class="titlebar">
+        <span class="window-mark" aria-hidden="true">&gt;_</span>
+        <span>vlad@portfolio: ~</span>
+        <button id="theme-toggle" class="text-button" type="button" aria-label="Включить светлую тему">светлая тема</button>
+      </div>
+      <div class="screen" id="screen">
+        <section class="welcome" aria-label="Знакомство">
+          <p class="session-line"><span class="status-dot" aria-hidden="true"></span>Соединение установлено. Добро пожаловать.</p>
+          <p class="command-line" aria-hidden="true"><span class="prompt-user">guest</span><span class="muted">@</span>vlad<span class="muted">:~</span><span class="prompt-sign">$</span> cat README.md</p>
+          <h1>Владислав<br>Скляренко<span class="accent">.</span></h1>
+          <p class="role">Backend-разработчик <span class="muted">/</span> Python & Go</p>
+          <p class="intro">Проектирую API, работаю с данными<br class="desktop-break"> и довожу сервисы до production.</p>
+          <p class="location"><span aria-hidden="true">└─</span> Санкт-Петербург <span class="muted">·</span> <a href="https://t.me/sklyarvlad" target="_blank" rel="noopener noreferrer">написать в Telegram ↗</a></p>
+          <p class="welcome-hint">Это портфолио, с которым можно поговорить.<br>Введи <button type="button" class="inline-command" data-command="help">help</button> или выбери команду ниже.</p>
+        </section>
+        <nav class="commands" aria-label="Команды портфолио">
+          <button type="button" data-command="about"><span>about</span><small>обо мне</small></button>
+          <button type="button" data-command="projects"><span>projects</span><small>проекты</small></button>
+          <button type="button" data-command="experience"><span>experience</span><small>опыт</small></button>
+          <button type="button" data-command="skills"><span>skills</span><small>стек</small></button>
+          <button type="button" data-command="contact"><span>contact</span><small>контакты</small></button>
+          <button type="button" data-command="all"><span>all</span><small>показать всё</small></button>
+        </nav>
+        <div id="output" role="log" aria-label="Ответы терминала" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+        <form id="command-form" class="input-row" autocomplete="off" hidden>
+          <label for="command-input"><span class="prompt-user">guest</span><span class="muted">@</span>vlad<span class="muted">:~</span><span class="prompt-sign">$</span><span class="sr-only">Введите команду</span></label>
+          <input id="command-input" name="command" type="text" placeholder="введи команду…" spellcheck="false" autocapitalize="off" autocorrect="off" maxlength="500" enterkeyhint="send" aria-describedby="keyboard-hint">
+          <button class="submit-command" type="submit" aria-label="Выполнить команду">↵</button>
+        </form>
+        <noscript>
+          <section class="noscript-content">
+            <h2>Обо мне</h2><p>Backend-разработчик с коммерческим опытом на Python и fullstack пет-проектами на Go. Интересны backend, инфраструктура и проектирование систем.</p>
+            <h2>Проекты</h2><p><a href="https://github.com/sklyar-vlad/selfdev">SelfDev</a> — трекер привычек с геймификацией. Go, PostgreSQL, Redis, OAuth2/OIDC, Docker, Traefik.</p><p><a href="https://github.com/sklyar-vlad/test-stackbridge">StackBridge Subscription API</a> — API агрегации подписок. Go, Gin, PostgreSQL, testcontainers-go.</p><p>Meeting Room Booking Service — бронирование переговорных. Go, PostgreSQL, JWT, unit/e2e и нагрузочные тесты.</p>
+            <h2>Опыт</h2><p>ООО «Байты бизнесу» — backend-разработчик, февраль — август 2025. Python, FastAPI/Django, REST API, Alembic, Docker.</p>
+            <h2>Образование</h2><p>ГУАП, бакалавриат, прикладная информатика в информационной сфере, 2024–2028.</p>
+            <h2>Связаться</h2><p><a href="mailto:sklyarvladislavtl@gmail.com">sklyarvladislavtl@gmail.com</a> · <a href="https://t.me/sklyarvlad">Telegram</a></p>
+            <p>Для интерактивных команд включите JavaScript.</p>
+          </section>
+        </noscript>
+      </div>
+      <div class="statusbar"><span><span class="status-dot" aria-hidden="true"></span>portfolio shell</span><span>UTF-8 <span class="status-divider">/</span> <span id="clock">MSK</span></span></div>
+    </main>
+    <footer><p id="keyboard-hint"><kbd>Tab</kbd> дополнить <span>·</span> <kbd>↑ ↓</kbd> история <span>·</span> <kbd>Ctrl L</kbd> очистить</p><p>Обычный браузер. Немного другой интерфейс.</p></footer>
+  </div>
+</body>
+</html>
