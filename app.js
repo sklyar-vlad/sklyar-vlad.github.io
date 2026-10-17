@@ -53,7 +53,7 @@
   function commandLine(text) {
     const p = node('p', undefined, 'command-line');
     const token = text.trimStart().split(/\s+/)[0];
-    p.append(node('span', 'visitor', 'prompt-user'), node('span', '@'), node('span', 'sklyar-vlad', 'prompt-host'), node('span', ' ~/portfolio', 'prompt-path'), node('span', '> ', 'prompt-sign'), node('span', text, [...commands, ...Object.keys(aliases), 'theme'].includes(token) ? 'valid-command' : 'error'));
+    p.append(node('span', 'visitor', 'prompt-user'), node('span', '@'), node('span', 'sklyarvlad', 'prompt-host'), node('span', ' ~/portfolio', 'prompt-path'), node('span', '> ', 'prompt-sign'), node('span', text, [...commands, ...Object.keys(aliases), 'theme'].includes(token) ? 'valid-command' : 'error'));
     return p;
   }
   function trimOutput() { while (output.children.length > 50) output.firstElementChild.remove(); }

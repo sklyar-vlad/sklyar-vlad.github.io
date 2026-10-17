@@ -30,3 +30,6 @@ GitHub Pages static deployment; fish-style prompt, syntax feedback and inline hi
 
 ## Latest interaction requirements
 User requested UNIX-style command syntax and errors, case sensitivity and no unsolicited suggestions or instructional hints. Explicit help remains available. Implement quoting, escapes and comments without executing arbitrary code; report unsupported operators explicitly.
+
+## Current portrait and name
+User supplied /home/sklyarvlad/Documents/vlad/IMG_20240908_103314_763.jpg as the new portrait source, replacing the blue-hoodie photograph. Preserve the front-facing likeness and use transparent cutout with deterministic browser pixelation. Display nickname sklyarvlad as solid block lettering rather than the former outline-style Sklyar wordmark. GitHub URLs retain the actual sklyar-vlad username.
