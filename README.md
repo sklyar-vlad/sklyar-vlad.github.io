@@ -14,9 +14,15 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 ## Команды
 
-`about`, `projects`, `experience`, `skills`, `contact`, `all`, `help`, `clear`, `theme`.
+`about`, `projects`, `experience`, `skills`, `contact`, `all`, `help`, `clear`, `theme`, `themes`, `welcome`, `history`, `echo`, `pwd`, `whoami`, `email`, `socials`.
 
-Алиасы: `whoami`, `ls`, `stack`, `contacts`, `cls`, `?`. Стрелки ↑/↓ переключают историю, Tab дополняет команду, Escape очищает ввод, Ctrl+L очищает ответы, когда фокус находится в поле ввода. Команды доступны кнопками на телефоне. Есть светлая тема и текстовая версия без JavaScript. История команд хранится только до перезагрузки страницы.
+Большая консоль по центру экрана с прокруткой внутри окна. Палитра: тёмно-синий, ледяной голубой и янтарный. Оформление и поведение в стиле fish: `visitor@sklyar-vlad ~/portfolio>`, подсветка известных команд, история через ↑/↓ и тихое дополнение уникальной команды через Tab. Автоподсказки и обучающие надписи отключены. Это браузерная эмуляция для статического GitHub Pages, а не запущенный fish и не доступ к системной оболочке.
+
+При загрузке выводится `welcome`; список команд доступен через `help`. `clear` очищает весь вывод. `welcome` возвращает приветствие. Темы: `theme dark`, `theme light`.
+
+Справа от вывода `welcome` — портрет Владислава в синей толстовке. Вырезка заново сделана по исходной фотографии. Пикселизация выполняется canvas в браузере с шириной 224 пикселя: она уменьшает изображение, не перерисовывая черты лица. Фон и другие участники удалены, PNG сохраняет прозрачность. Портрет появляется сразу вместе с командой, без анимации. Предзагрузка изображения ускоряет первый показ; по нажатию доступен полный размер. На телефоне портрет расположен под приветствием.
+
+Алиасы: `ls`, `stack`, `contacts`, `cls`, `?`, `gui` (показывает всё портфолио). Стрелки ↑/↓ переключают историю, Tab или Ctrl+I дополняет уникальную команду без вывода вариантов, Escape очищает ввод, Ctrl+L очищает ответы, когда фокус находится в поле ввода. Команды в справке кликабельны, в том числе на телефоне. Есть светлая тема и текстовая версия без JavaScript. История команд хранится только до перезагрузки страницы.
 
 ## Изменить данные
 
@@ -30,7 +36,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 Для адреса `https://sklyar-vlad.github.io` создай на GitHub публичный репозиторий `sklyar-vlad.github.io`. Если он уже существует, сначала проверь его содержимое, чтобы не заменить другой сайт.
 
-Загрузи в корень репозитория `index.html`, `style.css`, `profile.js`, `app.js`, `favicon.svg` и `.nojekyll`.
+Загрузи в корень репозитория `index.html`, `style.css`, `profile.js`, `app.js`, `favicon.svg`, `.nojekyll` и папку `assets/`.
 
 В репозитории выбери **Settings → Pages → Build and deployment → Source: Deploy from a branch → main → / (root) → Save**.
 
@@ -38,7 +44,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 ```sh
 git init -b main
-git add index.html style.css profile.js app.js favicon.svg .nojekyll README.md .gitignore
+git add index.html style.css profile.js app.js favicon.svg .nojekyll assets README.md .gitignore
 git commit -m "Build terminal portfolio"
 git remote add origin git@github.com:sklyar-vlad/sklyar-vlad.github.io.git
 git push -u origin main
@@ -47,3 +53,7 @@ git push -u origin main
 Относительные пути также позволяют разместить страницу в репозитории с другим названием по адресу `https://sklyar-vlad.github.io/имя-репозитория/`.
 
 Документация: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+
+## Синтаксис команд
+
+Имена команд учитывают регистр. Поддерживаются одинарные/двойные кавычки, экранирование и комментарии через `#`. `echo "hello world"` выводит `hello world`, `whoami` — `visitor`. Для неизвестных команд: `fish: Unknown command: name`. Операторы конвейеров и перенаправления в статической оболочке не выполняются; возвращается явная ошибка.
